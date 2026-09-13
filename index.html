@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Hanken+Grotesk:wght@300;400;500;600&family=Noto+Sans+Bengali:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Ambient background layers: glow blobs + floating particles, shared across all pages -->
+<div class="ambient">
+  <div class="glow glow-a"></div>
+  <div class="glow glow-b"></div>
+  <div class="glow glow-c"></div>
+  <div class="grain"></div>
+</div>
+<canvas id="particles"></canvas>
+
+<main id="app">
+
+  <!-- ============ PAGE 1 — INTRODUCTION ============ -->
+  <section class="page page--intro is-active" id="page-1">
+    <div class="intro-card">
+      <div class="mini-heart" aria-hidden="true">
+        <svg viewBox="0 0 32 29" width="30" height="28">
+          <path d="M16 28.2C7.6 22.1 1 16.6 1 9.6 1 4.9 4.7 1 9.4 1c2.8 0 5.3 1.4 6.6 3.6C17.3 2.4 19.8 1 22.6 1 27.3 1 31 4.9 31 9.6c0 7-6.6 12.5-15 18.6z"/>
+        </svg>
+      </div>
+
+      <div class="portrait-frame">
+        <div class="portrait-glow"></div>
+        <img src="images/photo-portrait.jpg" alt="Portrait" class="portrait-img">
+      </div>
+
+      <h1 class="intro-title">Happy Birthday,<br><span>prettiest girl itw</span></h1>
+
+      <p class="intro-born">Born on 17.11.2005</p>
+
+      <p class="intro-text">On this special day, I wanted to create something small but meaningful — a little place filled with memories, love, friendship, and wishes just for you.</p>
+
+      <button class="btn btn--primary" id="btn-open-surprise">
+        <span>Open My Surprise</span>
+        <svg width="18" height="16" viewBox="0 0 18 16" fill="none"><path d="M9 15.5C4.3 12.4 1 9.4 1 5.9 1 3.2 3.1 1 5.8 1c1.6 0 3.1.8 3.8 2.1C10.3 1.8 11.8 1 13.4 1 16.1 1 18.2 3.2 18.2 5.9c0 3.5-3.3 6.5-9.2 9.6z" fill="currentColor"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ============ PAGE 2 — JOURNEY TIMELINE ============ -->
+  <section class="page page--journey" id="page-2">
+    <div class="journey-wrap">
+      <p class="eyebrow-label">our beautiful journey</p>
+
+      <div class="timeline">
+        <div class="timeline-photo timeline-photo--left">
+          <div class="photo-card">
+            <img src="images/photo-2012.jpg" alt="2012 memory" class="photo-card-img">
+          </div>
+          <span class="year-tag">2012</span>
+        </div>
+
+        <div class="timeline-link">
+          <svg class="heart-chain" viewBox="0 0 300 60" preserveAspectRatio="none">
+            <path id="chain-path" d="M0,30 C 60,0 120,60 150,30 C 180,0 240,60 300,30" fill="none" stroke="url(#chainGrad)" stroke-width="1.5" stroke-dasharray="4 6"/>
+            <defs>
+              <linearGradient id="chainGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#ff9ec7"/>
+                <stop offset="1" stop-color="#c98bff"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="chain-hearts" id="chain-hearts"></div>
+          <div class="arrow-label">2012 <span>→</span> 2026</div>
+        </div>
+
+        <div class="timeline-photo timeline-photo--right">
+          <div class="photo-card">
+            <img src="images/photo-2026.jpg" alt="2026 memory" class="photo-card-img">
+          </div>
+          <span class="year-tag">2026</span>
+        </div>
+      </div>
+
+      <div class="years-count">
+        <span class="years-number" id="years-number">0</span>
+        <span class="years-suffix">Years of Beautiful Bonding ❤️</span>
+      </div>
+
+      <p class="bengali-msg">
+        From 2012 to 2026 —<br><br>
+        So much has changed in all this time,<br>
+        our surroundings have changed, life has changed,<br>
+        but our memories of friendship are still just as beautiful.<br><br>
+        I want this friendship to stay just as strong<br>
+        until the very end of life. ❤️
+      </p>
+
+      <div class="btn-row">
+        <button class="btn btn--secondary back-btn" data-from="page-2" data-to="page-1">
+          <span>← Back</span>
+        </button>
+        <button class="btn btn--secondary" id="btn-next-message">
+          <span>One More Message</span> 💌
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PAGE 3 — FINAL WISH ============ -->
+  <section class="page page--wish" id="page-3">
+    <div class="wish-card">
+      <p class="eyebrow-label">for you, today</p>
+      <h2 class="wish-title">Happy Birthday,<br><span>the prettiest girl</span></h2>
+
+      <p class="bengali-msg bengali-msg--final">
+        Today marks the start of another beautiful year of your life.<br><br>
+        May Allah fill your life with<br>
+        happiness, peace, love, and success. 🤲<br><br>
+        May every dream of yours come true,<br>
+        may the smile on your face never fade,<br>
+        and may you find happiness and peace on every path of life.<br><br>
+        Stay well always,<br>
+        stay happy,<br>
+        and may every beautiful wish in your heart come true.<br><br>
+        And most importantly —<br>
+        wherever life takes us,<br>
+        I want our friendship to stay just like this, forever.<br><br>
+        Times will change,<br>
+        life will change,<br>
+        we may grow older,<br>
+        but may our friendship never change.<br><br>
+        Happy Birthday once again! ❤️🎂✨
+      </p>
+
+      <div class="btn-row">
+        <button class="btn btn--secondary back-btn" data-from="page-3" data-to="page-2">
+          <span>← Back</span>
+        </button>
+        <button class="btn btn--primary" id="btn-wish">
+          <span>Make a Wish</span> ✨
+        </button>
+      </div>
+
+      <div class="final-message" id="final-message">
+        May your life always be filled with happiness, love, peace, and beautiful memories. ❤️🤲
+      </div>
+
+      <button class="btn btn--secondary" id="btn-gift">
+        <span>One More Gift</span> 🎁
+      </button>
+    </div>
+  </section>
+
+  <!-- ============ PAGE 4 — GIFT ============ -->
+  <section class="page page--gift" id="page-4">
+    <div class="gift-card">
+      <p class="eyebrow-label">one more thing</p>
+
+      <h2 class="gift-title">Ye le tera gift. 🎁</h2>
+
+      <div class="gift-gallery">
+        <div class="gift-photo-frame">
+          <img src="images/photo-gift.jpg" alt="Gift photo 1" class="gift-photo-img">
+        </div>
+        <div class="gift-photo-frame">
+          <img src="images/photo-gift-2.jpg" alt="Gift photo 2" class="gift-photo-img">
+        </div>
+        <div class="gift-photo-frame">
+          <img src="images/photo-gift-3.jpg" alt="Gift photo 3" class="gift-photo-img">
+        </div>
+        <div class="gift-photo-frame">
+          <img src="images/photo-gift-4.jpg" alt="Gift photo 4" class="gift-photo-img">
+        </div>
+      </div>
+
+      <button class="btn btn--secondary back-btn" data-from="page-4" data-to="page-3">
+        <span>← Back</span>
+      </button>
+    </div>
+  </section>
+
+</main>
+
+<!-- Confetti canvas overlay for final wish moment -->
+<canvas id="confetti"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
